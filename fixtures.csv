@@ -1,0 +1,11 @@
+IDFixture,Season,HomeTeam,AwayTeam,HomeGoals,AwayGoals,Referee,Result,Date,Competition
+1,2018/2019,Man United,Leicester,2,1,A Marriner,H,2018-10-08,Premiere Leauge
+2,2018/2019,Bournemouth,Cardiff,2,0,K Friend,H,2018-11-08,Premiere Leauge
+3,2018/2019,Fulham,Crystal Palace,0,2,M Dean,A,2018-11-08,Premiere Leauge
+4,2018/2019,Huddersfield,Chelsea,0,3,C Kavanagh,A,2018-11-08,Premiere Leauge
+5,2018/2019,Newcastle,Tottenham,1,2,M Atkinson,A,2018-11-08,Premiere Leauge
+6,2018/2019,Watford,Brighton,2,0,J Moss,H,2018-11-08,Premiere Leauge
+7,2018/2019,Wolves,Everton,2,2,C Pawson,D,2018-11-08,Premiere Leauge
+8,2018/2019,Arsenal,Man City,0,2,M Oliver,A,2018-12-08,Premiere Leauge
+9,2018/2019,Liverpool,Southampton,4,0,A Taylor,H,2018-12-08,Premiere Leauge
+10,2018/2019,Burnley,West Ham,0,0,G Scott,D,2018-12-08,Premiere Leauge
