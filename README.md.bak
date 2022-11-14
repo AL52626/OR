@@ -3,7 +3,7 @@
     <p> Verzija : 1.0</p>
 
     <p> Jezik : Engelski</p>
-    <div> Atributi :
+     <p>  Atributi :</p>
       <p>IDFixture-primarni kljuc u tablic</p>
       <p> Season-sezona u kojoj se utakmica igra</p>
       <p> HomeTeam-domaci tim</p>
