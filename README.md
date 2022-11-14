@@ -1,5 +1,4 @@
-   <div>
-  
+   <head>
   <p> Autor : Andrej Lukic</p>
     <p> Verzija : 1.0</p>
 
@@ -15,4 +14,4 @@
       <p> Result-rezultat utakmice</p>
       <p> Date-datum utakmice</p>
       <p> Competition-natjecanje u kojem se utakmica igra</p>
-    </div>
+    </head>
