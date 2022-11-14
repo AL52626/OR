@@ -1,7 +1,5 @@
-
   <p> Autor : Andrej Lukic</p>
     <p> Verzija : 1.0</p>
-
     <p> Jezik : Engelski</p>
      <p>  Atributi :</p>
       <p>IDFixture-primarni kljuc u tablic</p>
