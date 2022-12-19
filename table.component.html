@@ -1,0 +1,113 @@
+<div class=" flex flex-col overflow-auto max-h-[854px] px-2">
+  <div class="p-3">
+
+
+
+    <mat-form-field appearance="fill" class="px-3" [floatLabel]="'never'">
+      <mat-label>Filter</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="select ">
+        <mat-option>*</mat-option>
+        <mat-option *ngFor="let column of columns" [value]="column">
+          {{column}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard" class="p-2">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8  w-full rounded-2xl  font-medium italic" matSort>
+
+    <ng-container matColumnDef="idFixture">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> IdFixture</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;let i = index;"> {{element.idFixture}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="season">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Season</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.season}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="homeTeam">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Home Team</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.homeTeam}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="awayTeam">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Away Team</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.awayTeam}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="homeGoals">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Home Goals</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.homeGoals}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="awayGoals">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Away Goals</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.awayGoals}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="referee">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Referee</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.referee}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="result">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Result</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.result}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="competition">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Competition</th>
+      <td mat-cell [ngStyle]="{'background-color':even ? 'rgb(103,58,183,15%)' : 'rgb(103,58,183,30%)' }"
+          *matCellDef="let element;let even=even;"> {{element.competition}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns;sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <a href="https://github.com/AL52626/OR/blob/39a8a7fad2c5640c3f86b0e0b562ea72d7c8f645/fixtures.json">json</a>
+  <a href="https://github.com/AL52626/OR/blob/39a8a7fad2c5640c3f86b0e0b562ea72d7c8f645/fixtures.csv">csv</a>
+
+  <p> Autor : Andrej Lukic</p>
+  <p> Verzija : 1.0</p>
+
+  <p> Jezik : Engelski</p>
+  <div> Atributi :
+    <p>IDFixture-primarni kljuc u tablic</p>
+    <p> Season-sezona u kojoj se utakmica igra</p>
+    <p> HomeTeam-domaci tim</p>
+    <p> AwayTeam-gostujuci tim</p>
+    <p> HomeGoals-koliko je golova zabio domaci tim</p>
+    <p> AwayGoals-koliko je golova zabio gostujuci tim</p>
+    <p> Referee-sudac na utakmici</p>
+    <p> Result-rezultat utakmice</p>
+    <p> Date-datum utakmice</p>
+    <p> Competition-natjecanje u kojem se utakmica igra</p>
+  </div>
+
+</div>
